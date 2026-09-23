@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Sun, Heart, Zap, Calendar } from 'lucide-react'
 import { SPECIALTIES } from '@/lib/constants'
@@ -43,47 +44,69 @@ export default function Specialties() {
 
         {/* Specialty Cards */}
         <motion.div
-          className="mt-8 sm:mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-7"
+          className="mt-8 sm:mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          {SPECIALTIES.map(({ pillar, title, description, tags, icon }, i) => {
+          {SPECIALTIES.map(({ pillar, title, description, tags, icon, image }, i) => {
             const Icon = icons[icon as keyof typeof icons]
             return (
               <motion.div
                 key={pillar}
                 variants={fadeUp}
                 custom={i}
-                className="group rounded-2xl bg-[var(--color-surface-container-low)] p-5 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                className="group flex flex-col rounded-3xl bg-[var(--color-surface-container-low)] border border-[var(--color-outline-variant)]/50 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden"
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[var(--color-surface-container)] text-[var(--color-primary)] border border-[var(--color-outline-variant)]/40 shadow-xs group-hover:bg-[var(--color-secondary-container)] group-hover:text-[var(--color-secondary)] group-hover:border-[var(--color-secondary)]/40 group-hover:scale-105 transition-all duration-300">
-                    <Icon size={20} className="sm:w-[22px] sm:h-[22px]" strokeWidth={1.65} />
+                {/* Unsplash Photo Banner */}
+                {image && (
+                  <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-[var(--color-surface-container)]">
+                    <Image
+                      src={image}
+                      alt={title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+
+                    {/* Floating Badge Cluster */}
+                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                      <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-white/95 backdrop-blur-md text-[var(--color-primary)] shadow-md border border-white/60 group-hover:scale-110 transition-transform duration-300">
+                        <Icon size={20} strokeWidth={1.8} />
+                      </div>
+                      <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[var(--color-primary)] text-[11px] font-semibold tracking-wider uppercase shadow-xs border border-white/60">
+                        Pillar {pillar}
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-[var(--color-on-surface-variant)] uppercase tracking-wider" style={{ fontSize: '11px', lineHeight: '16px', letterSpacing: '0.04em', fontWeight: 600 }}>
-                    Pillar {pillar}
-                  </span>
-                </div>
-                <h3
-                  className="mt-4 sm:mt-6 text-[var(--color-primary)] font-medium"
-                  style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(19px, 3vw, 22px)', lineHeight: '26px', fontWeight: 500 }}
-                >
-                  {title}
-                </h3>
-                <p className="mt-2.5 text-[var(--color-on-surface-variant)] leading-relaxed text-sm sm:text-base" style={{ lineHeight: '1.6' }}>
-                  {description}
-                </p>
-                <div className="mt-4 sm:mt-6 flex flex-wrap gap-1.5 sm:gap-2">
-                  {tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-[var(--color-surface)] px-2.5 sm:px-3 py-0.5 sm:py-1 text-[var(--color-primary)] font-medium"
-                      style={{ fontSize: '11px', lineHeight: '16px', letterSpacing: '0.03em' }}
+                )}
+
+                {/* Content */}
+                <div className="p-5 sm:p-7 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3
+                      className="text-[var(--color-primary)] font-medium"
+                      style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(20px, 3vw, 24px)', lineHeight: '28px', fontWeight: 500 }}
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      {title}
+                    </h3>
+                    <p className="mt-2.5 text-[var(--color-on-surface-variant)] leading-relaxed text-sm sm:text-base" style={{ lineHeight: '1.65' }}>
+                      {description}
+                    </p>
+                  </div>
+
+                  <div className="mt-5 pt-4 border-t border-[var(--color-outline-variant)]/30 flex flex-wrap gap-1.5 sm:gap-2">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-[var(--color-surface)] px-2.5 sm:px-3 py-1 text-[var(--color-primary)] font-medium border border-[var(--color-outline-variant)]/40 shadow-2xs"
+                        style={{ fontSize: '11px', lineHeight: '16px', letterSpacing: '0.02em' }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             )
