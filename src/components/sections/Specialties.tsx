@@ -17,7 +17,11 @@ const fadeUp = {
 
 export default function Specialties() {
   return (
-    <section id="specialties" className="w-full bg-[var(--color-surface)] py-12 sm:py-20 lg:py-28 scroll-mt-20">
+    <section id="specialties" className="relative w-full overflow-hidden bg-[var(--color-surface)] py-12 sm:py-20 lg:py-28 scroll-mt-20">
+      {/* Atmospheric Background Gradients */}
+      <div className="pointer-events-none absolute -right-36 top-16 h-96 w-96 rounded-full bg-[var(--color-secondary-fixed)]/25 blur-3xl" />
+      <div className="pointer-events-none absolute -left-36 bottom-20 h-80 w-80 rounded-full bg-[var(--color-primary-fixed)]/20 blur-3xl" />
+
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
         {/* Section Intro */}
         <motion.div
