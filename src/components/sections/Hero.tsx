@@ -17,21 +17,21 @@ export default function Hero() {
       <div className="pointer-events-none absolute -left-48 top-0 h-96 w-96 rounded-full bg-[var(--color-secondary-fixed)]/30 blur-3xl" />
       <div className="pointer-events-none absolute -right-32 top-40 h-80 w-80 rounded-full bg-[var(--color-primary-fixed)]/20 blur-3xl" />
 
-      <div className="mx-auto max-w-[1240px] px-[var(--spacing-gutter)]">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
           {/* Left Column: Messaging & CTAs */}
           <div className="flex flex-col items-start lg:col-span-7">
             {/* Availability Pill */}
-            <div className="inline-flex items-center rounded-full bg-[var(--color-surface-container)] px-4 py-1.5 shadow-sm">
-              <span className="text-[var(--color-on-surface-variant)] font-medium" style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em' }}>
+            <div className="inline-flex items-center rounded-full bg-[var(--color-surface-container)] px-3.5 sm:px-4 py-1.5 shadow-sm max-w-full">
+              <span className="text-[var(--color-on-surface-variant)] font-medium text-center truncate" style={{ fontSize: 'clamp(11px, 3.2vw, 13px)', lineHeight: '18px', letterSpacing: '0.02em' }}>
                 Accepting New In-Person & Telehealth Clients
               </span>
             </div>
 
             {/* Hero Headline */}
             <h1
-              className="mt-6 text-[var(--color-primary)] tracking-tight"
-              style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(32px, 5.5vw, 56px)', lineHeight: 1.15, fontWeight: 400, letterSpacing: '-0.02em' }}
+              className="mt-5 sm:mt-6 text-[var(--color-primary)] tracking-tight"
+              style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(30px, 6.5vw, 56px)', lineHeight: 1.15, fontWeight: 400, letterSpacing: '-0.02em' }}
             >
               A safe, grounded space to heal, find clarity, and reconnect with yourself.
             </h1>

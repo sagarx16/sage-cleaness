@@ -60,8 +60,8 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="w-full bg-[var(--color-surface-container-low)] py-[var(--spacing-space-xl)] lg:py-28 scroll-mt-20">
-      <div className="mx-auto max-w-[1240px] px-[var(--spacing-gutter)]">
+    <section id="contact" className="w-full bg-[var(--color-surface-container-low)] py-16 sm:py-20 lg:py-28 scroll-mt-20">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}>
           <motion.span variants={fadeUp} custom={0} className="block text-[var(--color-secondary)] uppercase tracking-widest font-semibold" style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em' }}>
             Get in Touch
@@ -70,11 +70,11 @@ export default function Contact() {
             variants={fadeUp}
             custom={1}
             className="mt-3 text-[var(--color-primary)] tracking-tight"
-            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(30px, 4vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
+            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(28px, 5.5vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
           >
             Begin Your Journey Toward Healing
           </motion.h2>
-          <motion.p variants={fadeUp} custom={2} className="mt-4 text-[var(--color-on-surface-variant)]" style={{ fontSize: '18px', lineHeight: '28px' }}>
+          <motion.p variants={fadeUp} custom={2} className="mt-4 text-[var(--color-on-surface-variant)] text-base sm:text-lg" style={{ lineHeight: '1.6' }}>
             Schedule a free 15-minute video consultation or reach out with any questions. You don&apos;t have to carry this alone.
           </motion.p>
         </motion.div>
@@ -92,20 +92,41 @@ export default function Contact() {
               <h3 className="text-[var(--color-primary)]" style={{ fontFamily: 'var(--font-newsreader)', fontSize: '22px', lineHeight: '30px', fontWeight: 500 }}>
                 Practice Coordinates
               </h3>
-              <div className="space-y-4 text-[var(--color-on-surface-variant)]" style={{ fontSize: '16px', lineHeight: '26px' }}>
-                {[
-                  { icon: MapPin, label: 'Santa Monica Office', value: CONTACT_INFO.address },
-                  { icon: Phone, label: 'Direct Telephone', value: CONTACT_INFO.phone },
-                  { icon: Mail, label: 'Confidential Email', value: CONTACT_INFO.email },
-                ].map(({ icon: Icon, label, value }) => (
-                  <div key={label} className="flex items-start gap-3">
-                    <Icon size={22} className="text-[var(--color-secondary)] shrink-0 mt-0.5" strokeWidth={1.8} />
-                    <div>
-                      <p className="text-[var(--color-primary)]" style={{ fontSize: '17px', lineHeight: '24px', fontWeight: 600 }}>{label}</p>
-                      <p>{value}</p>
-                    </div>
+              <div className="space-y-4 text-[var(--color-on-surface-variant)]" style={{ fontSize: '15px', lineHeight: '24px' }}>
+                <a
+                  href={CONTACT_INFO.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 group hover:text-[var(--color-primary)] transition-colors"
+                >
+                  <MapPin size={22} className="text-[var(--color-secondary)] shrink-0 mt-0.5" strokeWidth={1.8} />
+                  <div>
+                    <p className="text-[var(--color-primary)] font-semibold" style={{ fontSize: '16px', lineHeight: '22px' }}>Santa Monica Office</p>
+                    <p className="group-hover:underline text-[var(--color-on-surface-variant)]">{CONTACT_INFO.address}</p>
                   </div>
-                ))}
+                </a>
+
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/[^0-9]/g, '')}`}
+                  className="flex items-start gap-3 group hover:text-[var(--color-primary)] transition-colors"
+                >
+                  <Phone size={22} className="text-[var(--color-secondary)] shrink-0 mt-0.5" strokeWidth={1.8} />
+                  <div>
+                    <p className="text-[var(--color-primary)] font-semibold" style={{ fontSize: '16px', lineHeight: '22px' }}>Direct Telephone</p>
+                    <p className="group-hover:underline text-[var(--color-on-surface-variant)]">{CONTACT_INFO.phone}</p>
+                  </div>
+                </a>
+
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="flex items-start gap-3 group hover:text-[var(--color-primary)] transition-colors"
+                >
+                  <Mail size={22} className="text-[var(--color-secondary)] shrink-0 mt-0.5" strokeWidth={1.8} />
+                  <div>
+                    <p className="text-[var(--color-primary)] font-semibold" style={{ fontSize: '16px', lineHeight: '22px' }}>Confidential Email</p>
+                    <p className="group-hover:underline text-[var(--color-on-surface-variant)] break-all">{CONTACT_INFO.email}</p>
+                  </div>
+                </a>
               </div>
               {/* Response Badge */}
               <div className="rounded-xl bg-[var(--color-secondary-container)]/40 p-4 flex items-center gap-3">

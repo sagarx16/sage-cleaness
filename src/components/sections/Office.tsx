@@ -22,15 +22,15 @@ export default function Office() {
     : `https://maps.google.com/maps?q=${encodeURIComponent(CONTACT_INFO.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`
 
   return (
-    <section id="office" className="w-full bg-[var(--color-surface)] py-[var(--spacing-space-xl)] lg:py-28 scroll-mt-20">
-      <div className="mx-auto max-w-[1240px] px-[var(--spacing-gutter)]">
+    <section id="office" className="w-full bg-[var(--color-surface)] py-16 sm:py-20 lg:py-28 scroll-mt-20">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <span className="block text-[var(--color-secondary)] uppercase tracking-widest font-semibold" style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em' }}>
             Where We Meet
           </span>
           <h2
             className="mt-3 text-[var(--color-primary)] tracking-tight"
-            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(30px, 4vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
+            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(28px, 5.5vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
           >
             In-Person Sanctuary & California Telehealth
           </h2>

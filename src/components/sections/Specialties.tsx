@@ -16,8 +16,8 @@ const fadeUp = {
 
 export default function Specialties() {
   return (
-    <section id="specialties" className="w-full bg-[var(--color-surface)] py-[var(--spacing-space-xl)] lg:py-28 scroll-mt-20">
-      <div className="mx-auto max-w-[1240px] px-[var(--spacing-gutter)]">
+    <section id="specialties" className="w-full bg-[var(--color-surface)] py-16 sm:py-20 lg:py-28 scroll-mt-20">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
         {/* Section Intro */}
         <motion.div
           className="text-center max-w-3xl mx-auto"

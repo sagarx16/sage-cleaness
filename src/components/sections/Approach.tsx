@@ -4,8 +4,8 @@ import { APPROACH_STEPS } from '@/lib/constants'
 
 export default function Approach() {
   return (
-    <section id="approach" className="w-full bg-[var(--color-surface-container)] py-[var(--spacing-space-xl)] lg:py-28 scroll-mt-20">
-      <div className="mx-auto max-w-[1240px] px-[var(--spacing-gutter)]">
+    <section id="approach" className="w-full bg-[var(--color-surface-container)] py-16 sm:py-20 lg:py-28 scroll-mt-20">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <span className="block text-[var(--color-secondary)] uppercase tracking-widest font-semibold" style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em' }}>
             Therapeutic Modality

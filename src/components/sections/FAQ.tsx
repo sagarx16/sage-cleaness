@@ -33,12 +33,12 @@ function FAQItem({ question, answer, defaultOpen }: { question: string; answer: 
       >
         <span
           className="text-[var(--color-primary)] font-medium"
-          style={{ fontFamily: 'var(--font-newsreader)', fontSize: '22px', lineHeight: '30px', fontWeight: 500 }}
+          style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(18px, 3.5vw, 22px)', lineHeight: '1.3', fontWeight: 500 }}
         >
           {question}
         </span>
         <ChevronDown
-          size={24}
+          size={22}
           className={cn(
             'text-[var(--color-secondary)] shrink-0 transition-transform duration-300',
             open && 'rotate-180',
@@ -52,7 +52,7 @@ function FAQItem({ question, answer, defaultOpen }: { question: string; answer: 
           open ? 'max-h-96 mt-4 opacity-100' : 'max-h-0 opacity-0',
         )}
       >
-        <p className="text-[var(--color-on-surface-variant)] leading-relaxed pr-8" style={{ fontSize: '16px', lineHeight: '26px' }}>
+        <p className="text-[var(--color-on-surface-variant)] leading-relaxed text-sm sm:text-base pr-2 sm:pr-8" style={{ lineHeight: '1.6' }}>
           {answer}
         </p>
       </div>
@@ -62,8 +62,8 @@ function FAQItem({ question, answer, defaultOpen }: { question: string; answer: 
 
 export default function FAQ() {
   return (
-    <section id="faq" className="w-full bg-[var(--color-surface)] py-[var(--spacing-space-xl)] lg:py-28 scroll-mt-20">
-      <div className="mx-auto max-w-[880px] px-[var(--spacing-gutter)]">
+    <section id="faq" className="w-full bg-[var(--color-surface)] py-16 sm:py-20 lg:py-28 scroll-mt-20">
+      <div className="mx-auto max-w-[880px] px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}>
           <motion.span variants={fadeUp} custom={0} className="block text-[var(--color-secondary)] uppercase tracking-widest font-semibold" style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em' }}>
             Got Questions?
@@ -72,11 +72,11 @@ export default function FAQ() {
             variants={fadeUp}
             custom={1}
             className="mt-3 text-[var(--color-primary)] tracking-tight"
-            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(30px, 4vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
+            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(28px, 5.5vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
           >
             Frequently Asked Questions
           </motion.h2>
-          <motion.p variants={fadeUp} custom={2} className="mt-4 text-[var(--color-on-surface-variant)]" style={{ fontSize: '18px', lineHeight: '28px' }}>
+          <motion.p variants={fadeUp} custom={2} className="mt-4 text-[var(--color-on-surface-variant)] text-base sm:text-lg" style={{ lineHeight: '1.6' }}>
             Clear answers to help you take the first step with confidence.
           </motion.p>
         </motion.div>

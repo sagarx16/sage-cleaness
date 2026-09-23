@@ -193,14 +193,26 @@ export default function Header() {
         {/* Floating Mobile Drawer */}
         <AnimatePresence>
           {mobileOpen && (
-            <motion.div
-              id="mobile-menu"
-              initial={{ opacity: 0, y: -10, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.98 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="lg:hidden mt-2 p-5 rounded-3xl bg-[var(--color-surface)]/95 backdrop-blur-2xl shadow-[0_16px_40px_-8px_rgba(49,67,53,0.18)] border border-[var(--color-outline-variant)]/50 overflow-hidden"
-            >
+            <>
+              {/* Backdrop Overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => setMobileOpen(false)}
+                className="fixed inset-0 bg-black/25 backdrop-blur-[2px] z-40 pointer-events-auto lg:hidden"
+                aria-hidden="true"
+              />
+
+              <motion.div
+                id="mobile-menu"
+                initial={{ opacity: 0, y: -10, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -10, scale: 0.98 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="relative z-50 lg:hidden mt-2 p-5 sm:p-6 rounded-3xl bg-[var(--color-surface)]/98 backdrop-blur-2xl shadow-[0_16px_40px_-8px_rgba(49,67,53,0.22)] border border-[var(--color-outline-variant)]/60 overflow-hidden"
+              >
               <div className="flex items-center justify-between pb-3 mb-2 border-b border-[var(--color-outline-variant)]/30">
                 <span className="text-xs font-medium text-[var(--color-primary)]">
                   Dr. Maya Reynolds, PsyD
@@ -260,8 +272,9 @@ export default function Header() {
                 </p>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
+          </>
+        )}
+      </AnimatePresence>
       </div>
     </header>
   )

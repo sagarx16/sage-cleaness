@@ -40,8 +40,8 @@ const credentials = [
 
 export default function About() {
   return (
-    <section id="about" className="relative w-full bg-[var(--color-surface-container-low)] py-[var(--spacing-space-xl)] lg:py-28 scroll-mt-20">
-      <div className="mx-auto max-w-[1240px] px-[var(--spacing-gutter)]">
+    <section id="about" className="relative w-full bg-[var(--color-surface-container-low)] py-16 sm:py-20 lg:py-28 scroll-mt-20">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           className="max-w-2xl"
@@ -56,18 +56,18 @@ export default function About() {
             variants={fadeUp}
             custom={1}
             className="mt-3 text-[var(--color-primary)] tracking-tight"
-            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(30px, 4vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
+            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(28px, 5.5vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
           >
             Compassionate, collaborative therapy rooted in genuine connection.
           </motion.h2>
         </motion.div>
 
         {/* Content Grid */}
-        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-14">
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-12 lg:gap-14">
           {/* Story Column */}
           <motion.div
-            className="space-y-5 lg:col-span-7 text-[var(--color-on-surface-variant)] leading-relaxed"
-            style={{ fontSize: '18px', lineHeight: '28px' }}
+            className="space-y-4 sm:space-y-5 lg:col-span-7 text-[var(--color-on-surface-variant)] leading-relaxed text-base sm:text-lg"
+            style={{ lineHeight: '1.65' }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}

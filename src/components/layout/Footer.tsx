@@ -5,8 +5,8 @@ import { NAV_LINKS, CONTACT_INFO, SITE_NAME } from '@/lib/constants'
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[var(--color-surface-container-low)] border-t border-[var(--color-outline-variant)]/50 pt-[var(--spacing-space-xl)] pb-[var(--spacing-space-lg)]">
-      <div className="max-w-[1240px] mx-auto px-[var(--spacing-gutter)]">
+    <footer className="w-full bg-[var(--color-surface-container-low)] border-t border-[var(--color-outline-variant)]/50 pt-14 pb-8 sm:pt-16 sm:pb-12">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-[var(--spacing-space-lg)] mb-[var(--spacing-space-xl)]">
           {/* Brand Column */}

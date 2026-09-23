@@ -14,8 +14,8 @@ const fadeUp = {
 
 export default function Gallery() {
   return (
-    <section className="w-full bg-[var(--color-surface-container-low)] py-[var(--spacing-space-xl)] lg:py-28">
-      <div className="mx-auto max-w-[1240px] px-[var(--spacing-gutter)]">
+    <section className="w-full bg-[var(--color-surface-container-low)] py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}>
           <motion.span variants={fadeUp} custom={0} className="block text-[var(--color-secondary)] uppercase tracking-widest font-semibold" style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em' }}>
             Office Tour
@@ -24,11 +24,11 @@ export default function Gallery() {
             variants={fadeUp}
             custom={1}
             className="mt-3 text-[var(--color-primary)] tracking-tight"
-            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(30px, 4vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
+            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(28px, 5.5vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
           >
             The Space: Designed for Calm
           </motion.h2>
-          <motion.p variants={fadeUp} custom={2} className="mt-4 text-[var(--color-on-surface-variant)]" style={{ fontSize: '18px', lineHeight: '28px' }}>
+          <motion.p variants={fadeUp} custom={2} className="mt-4 text-[var(--color-on-surface-variant)] text-base sm:text-lg" style={{ lineHeight: '1.6' }}>
             A physical sanctuary thoughtfully appointed with natural light, organic materials, and soothing acoustics.
           </motion.p>
         </motion.div>
