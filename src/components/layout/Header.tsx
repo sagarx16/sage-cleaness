@@ -75,7 +75,7 @@ export default function Header() {
               <div className="relative flex items-center justify-center shrink-0 w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden ring-1 ring-[var(--color-outline-variant)]/60 bg-[var(--color-surface-container)] transition-all duration-300 group-hover:ring-[var(--color-primary)]/40 group-hover:scale-105 shadow-xs">
                 <Image
                   src="/logo.png"
-                  alt="Dr. Maya Reynolds — Sage Wellness Psychological Practice emblem"
+                  alt="Dr. Maya Reynolds, PsyD emblem"
                   width={40}
                   height={40}
                   className="h-full w-full object-cover"

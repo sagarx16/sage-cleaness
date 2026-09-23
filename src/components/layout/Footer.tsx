@@ -26,12 +26,6 @@ export default function Footer() {
                 >
                   {SITE_NAME}
                 </span>
-                <span
-                  className="text-[var(--color-on-surface-variant)] tracking-wider uppercase"
-                  style={{ fontSize: '11px', lineHeight: '16px', letterSpacing: '0.04em', fontWeight: 600 }}
-                >
-                  Sage Wellness Psychological Practice
-                </span>
               </div>
             </div>
             <p className="text-[var(--color-on-surface-variant)] max-w-md leading-relaxed" style={{ fontSize: '14px', lineHeight: '22px' }}>
