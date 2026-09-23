@@ -145,7 +145,7 @@ export default function About() {
 
           {/* Bento Credential Grid */}
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:col-span-5 self-start"
+            className="grid grid-cols-2 gap-3 sm:gap-4 lg:col-span-5 self-start"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
@@ -155,14 +155,16 @@ export default function About() {
                 key={title}
                 variants={fadeUp}
                 custom={i}
-                className="rounded-2xl bg-[var(--color-surface)] p-6 shadow-sm flex flex-col justify-between border border-[var(--color-outline-variant)]/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                className="rounded-2xl bg-[var(--color-surface)] p-3.5 sm:p-6 shadow-sm flex flex-col justify-between border border-[var(--color-outline-variant)]/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
-                <Icon size={28} strokeWidth={1.5} className={color} />
-                <div className="mt-6">
-                  <span className="text-[var(--color-primary)] font-semibold" style={{ fontFamily: 'var(--font-newsreader)', fontSize: '22px', lineHeight: '30px', fontWeight: 500 }}>
+                <div className="flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-[var(--color-surface-container)] shrink-0">
+                  <Icon size={20} strokeWidth={1.6} className={color} />
+                </div>
+                <div className="mt-3 sm:mt-5">
+                  <span className="text-[var(--color-primary)] font-semibold block" style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(17px, 3.6vw, 22px)', lineHeight: '24px', fontWeight: 500 }}>
                     {title}
                   </span>
-                  <p className="mt-1 text-[var(--color-on-surface-variant)]" style={{ fontSize: '14px', lineHeight: '22px' }}>
+                  <p className="mt-1 text-[var(--color-on-surface-variant)] text-[12px] sm:text-[14px] leading-snug sm:leading-[22px]">
                     {body}
                   </p>
                 </div>

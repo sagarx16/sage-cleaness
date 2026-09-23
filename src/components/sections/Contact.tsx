@@ -60,7 +60,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="w-full bg-[var(--color-surface-container-low)] py-16 sm:py-20 lg:py-28 scroll-mt-20">
+    <section id="contact" className="w-full bg-[var(--color-surface-container-low)] py-12 sm:py-20 lg:py-28 scroll-mt-20">
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
         <motion.div className="text-center max-w-2xl mx-auto" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}>
           <motion.span variants={fadeUp} custom={0} className="block text-[var(--color-secondary)] uppercase tracking-widest font-semibold" style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em' }}>
@@ -70,39 +70,39 @@ export default function Contact() {
             variants={fadeUp}
             custom={1}
             className="mt-3 text-[var(--color-primary)] tracking-tight"
-            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(28px, 5.5vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
+            style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(26px, 5.5vw, 40px)', lineHeight: '1.2', fontWeight: 400, letterSpacing: '-0.015em' }}
           >
             Begin Your Journey Toward Healing
           </motion.h2>
-          <motion.p variants={fadeUp} custom={2} className="mt-4 text-[var(--color-on-surface-variant)] text-base sm:text-lg" style={{ lineHeight: '1.6' }}>
+          <motion.p variants={fadeUp} custom={2} className="mt-3 sm:mt-4 text-[var(--color-on-surface-variant)] text-sm sm:text-lg" style={{ lineHeight: '1.6' }}>
             Schedule a free 15-minute video consultation or reach out with any questions. You don&apos;t have to carry this alone.
           </motion.p>
         </motion.div>
 
-        <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="mt-8 sm:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10">
           {/* Left: Contact Info */}
           <motion.div
-            className="lg:col-span-5 flex flex-col justify-between space-y-6"
+            className="lg:col-span-5 flex flex-col justify-between space-y-5 sm:space-y-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
           >
             {/* Practice Coordinates */}
-            <motion.div variants={fadeUp} custom={0} className="rounded-3xl bg-[var(--color-surface)] p-8 shadow-sm space-y-5">
+            <motion.div variants={fadeUp} custom={0} className="rounded-2xl sm:rounded-3xl bg-[var(--color-surface)] p-5 sm:p-8 shadow-sm space-y-4 sm:space-y-5">
               <h3 className="text-[var(--color-primary)]" style={{ fontFamily: 'var(--font-newsreader)', fontSize: '22px', lineHeight: '30px', fontWeight: 500 }}>
                 Practice Coordinates
               </h3>
-              <div className="space-y-4 text-[var(--color-on-surface-variant)]" style={{ fontSize: '15px', lineHeight: '24px' }}>
+              <div className="space-y-3.5 sm:space-y-4 text-[var(--color-on-surface-variant)]" style={{ fontSize: '15px', lineHeight: '24px' }}>
                 <a
                   href={CONTACT_INFO.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 group hover:text-[var(--color-primary)] transition-colors"
                 >
-                  <MapPin size={22} className="text-[var(--color-secondary)] shrink-0 mt-0.5" strokeWidth={1.8} />
+                  <MapPin size={20} className="text-[var(--color-secondary)] shrink-0 mt-0.5 sm:w-[22px] sm:h-[22px]" strokeWidth={1.8} />
                   <div>
-                    <p className="text-[var(--color-primary)] font-semibold" style={{ fontSize: '16px', lineHeight: '22px' }}>Santa Monica Office</p>
-                    <p className="group-hover:underline text-[var(--color-on-surface-variant)]">{CONTACT_INFO.address}</p>
+                    <p className="text-[var(--color-primary)] font-semibold text-sm sm:text-base leading-snug">Santa Monica Office</p>
+                    <p className="group-hover:underline text-[var(--color-on-surface-variant)] text-xs sm:text-sm">{CONTACT_INFO.address}</p>
                   </div>
                 </a>
 
@@ -110,10 +110,10 @@ export default function Contact() {
                   href={`tel:${CONTACT_INFO.phone.replace(/[^0-9]/g, '')}`}
                   className="flex items-start gap-3 group hover:text-[var(--color-primary)] transition-colors"
                 >
-                  <Phone size={22} className="text-[var(--color-secondary)] shrink-0 mt-0.5" strokeWidth={1.8} />
+                  <Phone size={20} className="text-[var(--color-secondary)] shrink-0 mt-0.5 sm:w-[22px] sm:h-[22px]" strokeWidth={1.8} />
                   <div>
-                    <p className="text-[var(--color-primary)] font-semibold" style={{ fontSize: '16px', lineHeight: '22px' }}>Direct Telephone</p>
-                    <p className="group-hover:underline text-[var(--color-on-surface-variant)]">{CONTACT_INFO.phone}</p>
+                    <p className="text-[var(--color-primary)] font-semibold text-sm sm:text-base leading-snug">Direct Telephone</p>
+                    <p className="group-hover:underline text-[var(--color-on-surface-variant)] text-xs sm:text-sm">{CONTACT_INFO.phone}</p>
                   </div>
                 </a>
 
@@ -121,30 +121,30 @@ export default function Contact() {
                   href={`mailto:${CONTACT_INFO.email}`}
                   className="flex items-start gap-3 group hover:text-[var(--color-primary)] transition-colors"
                 >
-                  <Mail size={22} className="text-[var(--color-secondary)] shrink-0 mt-0.5" strokeWidth={1.8} />
+                  <Mail size={20} className="text-[var(--color-secondary)] shrink-0 mt-0.5 sm:w-[22px] sm:h-[22px]" strokeWidth={1.8} />
                   <div>
-                    <p className="text-[var(--color-primary)] font-semibold" style={{ fontSize: '16px', lineHeight: '22px' }}>Confidential Email</p>
-                    <p className="group-hover:underline text-[var(--color-on-surface-variant)] break-all">{CONTACT_INFO.email}</p>
+                    <p className="text-[var(--color-primary)] font-semibold text-sm sm:text-base leading-snug">Confidential Email</p>
+                    <p className="group-hover:underline text-[var(--color-on-surface-variant)] break-all text-xs sm:text-sm">{CONTACT_INFO.email}</p>
                   </div>
                 </a>
               </div>
               {/* Response Badge */}
-              <div className="rounded-xl bg-[var(--color-secondary-container)]/40 p-4 flex items-center gap-3">
-                <Timer size={22} className="text-[var(--color-secondary)] shrink-0" strokeWidth={1.8} />
-                <p className="text-[var(--color-on-surface-variant)]" style={{ fontSize: '14px', lineHeight: '22px' }}>
+              <div className="rounded-xl bg-[var(--color-secondary-container)]/40 p-3.5 sm:p-4 flex items-center gap-2.5 sm:gap-3">
+                <Timer size={20} className="text-[var(--color-secondary)] shrink-0 sm:w-[22px] sm:h-[22px]" strokeWidth={1.8} />
+                <p className="text-[var(--color-on-surface-variant)] text-xs sm:text-sm leading-relaxed">
                   <strong>Response time:</strong> All clinical inquiries are answered personally within 24–48 business hours.
                 </p>
               </div>
             </motion.div>
 
             {/* HIPAA Card */}
-            <motion.div variants={fadeUp} custom={1} className="rounded-2xl bg-[var(--color-surface-container)] p-6 shadow-sm flex items-start gap-4">
-              <Lock size={28} className="text-[var(--color-primary)] shrink-0" strokeWidth={1.5} />
+            <motion.div variants={fadeUp} custom={1} className="rounded-2xl bg-[var(--color-surface-container)] p-5 sm:p-6 shadow-sm flex items-start gap-3.5 sm:gap-4">
+              <Lock size={24} className="text-[var(--color-primary)] shrink-0 sm:w-7 sm:h-7" strokeWidth={1.5} />
               <div>
-                <h4 className="text-[var(--color-primary)]" style={{ fontSize: '17px', lineHeight: '24px', fontWeight: 600 }}>
+                <h4 className="text-[var(--color-primary)] text-sm sm:text-[17px] font-semibold">
                   100% Confidential & HIPAA-Compliant
                 </h4>
-                <p className="mt-1 text-[var(--color-on-surface-variant)]" style={{ fontSize: '14px', lineHeight: '22px' }}>
+                <p className="mt-1 text-[var(--color-on-surface-variant)] text-xs sm:text-sm leading-relaxed">
                   Your privacy is paramount. Communications submitted via this encrypted portal are protected under state and federal medical confidentiality standards.
                 </p>
               </div>
@@ -153,7 +153,7 @@ export default function Contact() {
 
           {/* Right: Form */}
           <motion.div
-            className="lg:col-span-7 rounded-3xl bg-[var(--color-surface)] p-6 sm:p-8 lg:p-10 shadow-md"
+            className="lg:col-span-7 rounded-2xl sm:rounded-3xl bg-[var(--color-surface)] p-5 sm:p-8 lg:p-10 shadow-md"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -250,11 +250,11 @@ export default function Contact() {
                     <legend className="block font-medium mb-2.5 text-[var(--color-on-surface)]" style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em', fontWeight: 500 }}>
                       Areas of Primary Concern (Select all that apply)
                     </legend>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-2.5">
+                    <div className="grid grid-cols-2 min-[480px]:grid-cols-3 gap-2 sm:gap-2.5">
                       {concerns.map(({ value, label }) => (
                         <label
                           key={value}
-                          className="flex items-center gap-2 rounded-xl bg-[var(--color-surface-container-low)] p-2.5 sm:p-3 cursor-pointer hover:bg-[var(--color-surface-container)] transition-colors"
+                          className="flex items-center gap-2 rounded-xl bg-[var(--color-surface-container-low)] p-2.5 sm:p-3 cursor-pointer hover:bg-[var(--color-surface-container)] transition-colors select-none"
                         >
                           <input
                             type="checkbox"

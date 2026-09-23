@@ -101,4 +101,13 @@
     outline-offset: 2px;
     border-radius: 4px;
   }
+  /* Prevent iOS Safari from zooming in on inputs */
+  @media (max-width: 767px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }

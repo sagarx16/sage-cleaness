@@ -12,17 +12,18 @@ const trustPills = [
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full overflow-hidden bg-[var(--color-surface)] pb-[var(--spacing-space-xl)] pt-6 sm:pt-10 lg:pt-12 lg:pb-28">
+    <section id="home" className="relative w-full overflow-hidden bg-[var(--color-surface)] pb-10 sm:pb-14 lg:pb-28 pt-4 sm:pt-10 lg:pt-12">
       {/* Atmospheric Background Gradients */}
       <div className="pointer-events-none absolute -left-48 top-0 h-96 w-96 rounded-full bg-[var(--color-secondary-fixed)]/30 blur-3xl" />
       <div className="pointer-events-none absolute -right-32 top-40 h-80 w-80 rounded-full bg-[var(--color-primary-fixed)]/20 blur-3xl" />
 
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-8">
           {/* Left Column: Messaging & CTAs */}
           <div className="flex flex-col items-start lg:col-span-7">
             {/* Availability Pill */}
-            <div className="inline-flex items-center rounded-full bg-[var(--color-surface-container)] px-3.5 sm:px-4 py-1.5 shadow-sm max-w-full">
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-surface-container)] px-3 sm:px-4 py-1.5 shadow-xs max-w-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-secondary)] shrink-0 animate-pulse" />
               <span className="text-[var(--color-on-surface-variant)] font-medium text-center truncate" style={{ fontSize: 'clamp(11px, 3.2vw, 13px)', lineHeight: '18px', letterSpacing: '0.02em' }}>
                 Accepting New In-Person & Telehealth Clients
               </span>
@@ -30,39 +31,39 @@ export default function Hero() {
 
             {/* Hero Headline */}
             <h1
-              className="mt-5 sm:mt-6 text-[var(--color-primary)] tracking-tight"
-              style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(30px, 6.5vw, 56px)', lineHeight: 1.15, fontWeight: 400, letterSpacing: '-0.02em' }}
+              className="mt-4 sm:mt-6 text-[var(--color-primary)] tracking-tight"
+              style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(28px, 6.2vw, 56px)', lineHeight: 1.15, fontWeight: 400, letterSpacing: '-0.02em' }}
             >
               A safe, grounded space to heal, find clarity, and reconnect with yourself.
             </h1>
 
             {/* Subtitle */}
             <p
-              className="mt-5 text-[var(--color-on-surface-variant)] max-w-xl leading-relaxed text-base sm:text-lg"
+              className="mt-3.5 sm:mt-5 text-[var(--color-on-surface-variant)] max-w-xl leading-relaxed text-sm sm:text-lg"
               style={{ lineHeight: '1.6' }}
             >
               Therapy for anxiety, trauma, and burnout — in-person at our quiet Santa Monica sanctuary & secure telehealth across California.
             </p>
 
             {/* Trust Pills */}
-            <div className="mt-7 flex flex-wrap items-center gap-2 sm:gap-2.5">
+            <div className="mt-5 sm:mt-7 flex flex-wrap items-center gap-1.5 sm:gap-2.5">
               {trustPills.map(({ icon: Icon, label }) => (
                 <span
                   key={label}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-secondary-container)]/50 px-3 sm:px-3.5 py-1.5 text-[var(--color-secondary)]"
-                  style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em', fontWeight: 500 }}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-secondary-container)]/50 px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[var(--color-secondary)] font-medium"
+                  style={{ fontSize: '12px', lineHeight: '16px', letterSpacing: '0.02em' }}
                 >
-                  <Icon size={15} strokeWidth={2} />
+                  <Icon size={14} strokeWidth={2} />
                   {label}
                 </span>
               ))}
             </div>
 
             {/* CTA Buttons */}
-            <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
+            <div className="mt-6 sm:mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-primary-container)] px-6 sm:px-7 py-3.5 text-[var(--color-on-primary)] shadow-md transition-all duration-300 hover:bg-[var(--color-primary)] hover:-translate-y-0.5 active:scale-[0.99] text-center"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--color-primary-container)] px-5 sm:px-7 py-3.5 text-[var(--color-on-primary)] shadow-md transition-all duration-300 hover:bg-[var(--color-primary)] hover:-translate-y-0.5 active:scale-[0.99] text-center"
                 style={{ fontSize: '15px', lineHeight: '20px', letterSpacing: '0.01em', fontWeight: 600 }}
               >
                 <span>Book a Free 15-Min Consultation</span>
@@ -70,16 +71,16 @@ export default function Hero() {
               </a>
               <a
                 href="#approach"
-                className="inline-flex items-center justify-center gap-1.5 px-5 py-3 text-[var(--color-primary)] hover:text-[var(--color-primary-container)] transition-colors group"
+                className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2.5 sm:py-3 text-[var(--color-primary)] hover:text-[var(--color-primary-container)] transition-colors group"
                 style={{ fontSize: '13px', lineHeight: '18px', letterSpacing: '0.02em', fontWeight: 500 }}
               >
                 <span>Explore My Approach</span>
-                <ArrowDown size={17} strokeWidth={2} className="transition-transform duration-300 group-hover:translate-y-0.5" />
+                <ArrowDown size={16} strokeWidth={2} className="transition-transform duration-300 group-hover:translate-y-0.5" />
               </a>
             </div>
 
             {/* Mobile-only: Side-by-Side Row (Name & License on Left, Photo Headshot on Right) */}
-            <div className="mt-8 w-full md:hidden">
+            <div className="mt-6 sm:mt-8 w-full md:hidden">
               <div className="relative overflow-hidden rounded-2xl bg-[var(--color-surface-container)]/90 p-3.5 sm:p-4 shadow-sm border border-[var(--color-outline-variant)]/40 flex items-center justify-between gap-3.5">
                 {/* Left: Name and License */}
                 <div className="flex flex-col justify-center min-w-0 pr-1">

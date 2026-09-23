@@ -59,25 +59,25 @@ export default function Header() {
         {/* Floating Capsule Shell */}
         <div
           className={cn(
-            'relative flex items-center justify-between gap-3 sm:gap-4 px-3.5 sm:px-5 rounded-full transition-all duration-300',
+            'relative flex items-center justify-between gap-2.5 sm:gap-4 px-3 sm:px-5 rounded-full transition-all duration-300',
             scrolled
-              ? 'h-16 bg-[var(--color-surface)]/90 backdrop-blur-xl shadow-[0_12px_32px_-6px_rgba(49,67,53,0.12)] border border-[var(--color-outline-variant)]/60'
-              : 'h-[68px] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-[0_8px_24px_-4px_rgba(49,67,53,0.06)] border border-[var(--color-outline-variant)]/40',
+              ? 'h-14 sm:h-16 bg-[var(--color-surface)]/90 backdrop-blur-xl shadow-[0_12px_32px_-6px_rgba(49,67,53,0.12)] border border-[var(--color-outline-variant)]/60'
+              : 'h-[60px] sm:h-[68px] bg-[var(--color-surface)]/80 backdrop-blur-md shadow-[0_8px_24px_-4px_rgba(49,67,53,0.06)] border border-[var(--color-outline-variant)]/40',
           )}
         >
           {/* Brand Monogram & Title */}
           <div className="flex-1 flex items-center justify-start min-w-0">
             <Link
               href="/"
-              className="flex items-center gap-3 shrink-0 group focus:outline-none"
+              className="flex items-center gap-2.5 sm:gap-3 shrink-0 group focus:outline-none"
               aria-label="Dr. Maya Reynolds homepage"
             >
-              <div className="relative flex items-center justify-center shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden ring-1 ring-[var(--color-outline-variant)]/60 bg-[var(--color-surface-container)] transition-all duration-300 group-hover:ring-[var(--color-primary)]/40 group-hover:scale-105 shadow-xs">
+              <div className="relative flex items-center justify-center shrink-0 w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden ring-1 ring-[var(--color-outline-variant)]/60 bg-[var(--color-surface-container)] transition-all duration-300 group-hover:ring-[var(--color-primary)]/40 group-hover:scale-105 shadow-xs">
                 <Image
                   src="/logo.png"
                   alt="Dr. Maya Reynolds — Sage Wellness Psychological Practice emblem"
-                  width={44}
-                  height={44}
+                  width={40}
+                  height={40}
                   className="h-full w-full object-cover"
                   priority
                 />
@@ -85,7 +85,7 @@ export default function Header() {
               <div className="flex flex-col justify-center text-left min-w-0">
                 <span
                   className="text-[var(--color-primary)] font-medium leading-tight tracking-tight transition-colors duration-200 group-hover:text-[var(--color-primary-container)] truncate"
-                  style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(16px, 4.2vw, 19px)' }}
+                  style={{ fontFamily: 'var(--font-newsreader)', fontSize: 'clamp(15px, 4vw, 19px)' }}
                 >
                   Dr. Maya Reynolds, PsyD
                 </span>
@@ -179,13 +179,13 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-surface-container)] text-[var(--color-primary)] border border-[var(--color-outline-variant)]/50 transition-colors hover:bg-[var(--color-surface-container-high)] shrink-0"
+              className="lg:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[var(--color-surface-container)] text-[var(--color-primary)] border border-[var(--color-outline-variant)]/50 transition-colors hover:bg-[var(--color-surface-container-high)] shrink-0 active:scale-95"
               onClick={() => setMobileOpen((v) => !v)}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
               aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileOpen ? <X size={19} /> : <Menu size={19} />}
             </button>
           </div>
         </div>
