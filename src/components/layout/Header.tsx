@@ -214,12 +214,22 @@ export default function Header() {
                 className="relative z-50 lg:hidden mt-2 p-5 sm:p-6 rounded-3xl bg-[var(--color-surface)]/98 backdrop-blur-2xl shadow-[0_16px_40px_-8px_rgba(49,67,53,0.22)] border border-[var(--color-outline-variant)]/60 overflow-hidden"
               >
               <div className="flex items-center justify-between pb-3 mb-2 border-b border-[var(--color-outline-variant)]/30">
-                <span className="text-xs font-medium text-[var(--color-primary)]">
-                  Dr. Maya Reynolds, PsyD
-                </span>
-                <span className="text-[11px] text-[var(--color-on-surface-variant)] uppercase tracking-wider font-semibold leading-none">
-                  Santa Monica & CA
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-xs font-semibold text-[var(--color-primary)]">
+                    Dr. Maya Reynolds, PsyD
+                  </span>
+                  <span className="text-[10px] text-[var(--color-on-surface-variant)] uppercase tracking-wider font-semibold leading-tight">
+                    Santa Monica & CA
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-[var(--color-surface-container)] text-[var(--color-on-surface)] hover:bg-[var(--color-surface-container-high)] border border-[var(--color-outline-variant)]/60 transition-all active:scale-90 shrink-0"
+                  aria-label="Close navigation menu"
+                >
+                  <X size={18} />
+                </button>
               </div>
 
               <nav className="flex flex-col gap-1 py-1" aria-label="Mobile navigation">
@@ -270,6 +280,16 @@ export default function Header() {
                 <p className="mt-1 text-center text-[var(--color-on-surface-variant)] leading-normal" style={{ fontSize: '11px' }}>
                   {CONTACT_INFO.address.split(',')[0]} · {CONTACT_INFO.license}
                 </p>
+
+                <button
+                  type="button"
+                  onClick={() => setMobileOpen(false)}
+                  className="w-full mt-1 py-2 flex items-center justify-center gap-1.5 text-xs font-medium text-[var(--color-on-surface-variant)] hover:text-[var(--color-primary)] transition-colors active:scale-98 border-t border-[var(--color-outline-variant)]/20 pt-2.5"
+                  aria-label="Close navigation menu"
+                >
+                  <X size={14} />
+                  <span>Close Menu</span>
+                </button>
               </div>
             </motion.div>
           </>
