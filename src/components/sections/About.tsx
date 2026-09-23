@@ -93,18 +93,10 @@ export default function About() {
               &ldquo;I believe therapy works best when clients feel respected, understood, and actively involved in the process. My goal is not just symptom relief, but helping clients develop insight, resilience, and a stronger relationship with themselves over time.&rdquo;
             </motion.blockquote>
 
-            {bioParagraphs.map((para, i) => (
-              <motion.p
-                key={i}
-                id={i === 1 ? 'about-dr-reynolds-bio-extended' : undefined}
-                variants={fadeUp}
-                custom={i + 1}
-                className={i > 0 && !isBioExpanded ? 'hidden md:block' : 'block'}
-                style={{ fontSize: '16px', lineHeight: '26px' }}
-              >
-                {para}
-              </motion.p>
-            ))}
+            {/* Paragraph 0 (always visible preview) */}
+            <motion.p variants={fadeUp} custom={1} style={{ fontSize: '16px', lineHeight: '26px' }}>
+              {bioParagraphs[0]}
+            </motion.p>
 
             {/* Mobile Read Full Bio / Show Less Button */}
             <div className="pt-1 md:hidden">
@@ -122,6 +114,32 @@ export default function About() {
                   <ChevronDown size={16} strokeWidth={2.2} className="text-[var(--color-secondary)]" />
                 )}
               </button>
+            </div>
+
+            {/* Extended Paragraphs (revealed below the button on mobile; always shown on desktop) */}
+            <div
+              id="about-dr-reynolds-bio-extended"
+              className={isBioExpanded ? 'space-y-4 sm:space-y-5 block' : 'hidden md:block md:space-y-4 sm:space-y-5'}
+            >
+              {bioParagraphs.slice(1).map((para, i) => (
+                <motion.p key={i + 1} variants={fadeUp} custom={i + 2} style={{ fontSize: '16px', lineHeight: '26px' }}>
+                  {para}
+                </motion.p>
+              ))}
+
+              {/* Bottom Show Less button on mobile for quick collapse after reading */}
+              {isBioExpanded && (
+                <div className="pt-2 md:hidden">
+                  <button
+                    type="button"
+                    onClick={() => setIsBioExpanded(false)}
+                    className="inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-surface)] px-4 py-2 text-sm font-semibold text-[var(--color-primary)] shadow-sm transition-all duration-200 hover:bg-[var(--color-surface-container-high)] focus:outline-none active:scale-[0.98]"
+                  >
+                    <span>Show Less</span>
+                    <ChevronUp size={16} strokeWidth={2.2} className="text-[var(--color-secondary)]" />
+                  </button>
+                </div>
+              )}
             </div>
           </motion.div>
 

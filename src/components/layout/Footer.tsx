@@ -50,7 +50,7 @@ export default function Footer() {
             >
               Practice & Care Details
             </h4>
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-3.5 sm:gap-4 md:gap-0 md:space-y-3">
               <div className="flex items-start gap-2">
                 <MapPin size={18} className="text-[var(--color-secondary)] shrink-0 mt-0.5" />
                 <p className="text-[var(--color-on-surface-variant)]" style={{ fontSize: '14px', lineHeight: '22px' }}>
@@ -76,12 +76,12 @@ export default function Footer() {
             >
               Navigation
             </h4>
-            <nav className="flex flex-col space-y-2" aria-label="Footer navigation">
+            <nav className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-col gap-x-4 gap-y-2.5 md:gap-0 md:space-y-2" aria-label="Footer navigation">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-[var(--color-on-surface-variant)] hover:text-[var(--color-primary)] transition-colors"
+                  className="text-[var(--color-on-surface-variant)] hover:text-[var(--color-primary)] transition-colors py-0.5"
                   style={{ fontSize: '14px', lineHeight: '22px' }}
                 >
                   {link.label}
