@@ -29,7 +29,7 @@ export const SPECIALTIES = [
       'Overcome racing thoughts, somatic tension, social apprehension, and the relentless inner critic. We pair nervous-system stabilization with cognitive tools to disarm anxious spirals and restore daily equilibrium.',
     tags: ['Panic Attacks', 'GAD', 'Health Anxiety'],
     icon: 'sun',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
   },
   {
     pillar: '02',
@@ -38,7 +38,7 @@ export const SPECIALTIES = [
       'Process single-incident shock or long-standing childhood relational wounds without having to relive every agonizing detail. EMDR activates your brain\'s natural healing system to unlock somatic release and felt safety.',
     tags: ['Complex PTSD', 'Bilateral Stimulation', 'Attachment Repair'],
     icon: 'heart',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=800&q=80',
   },
   {
     pillar: '03',
@@ -47,7 +47,7 @@ export const SPECIALTIES = [
       'Support for founders, tech executives, attorneys, and entertainment professionals caught in chronic overdrive, imposter fears, and sensory overload. Shift from survival stamina to aligned, sustainable vitality.',
     tags: ['Executive Overwhelm', 'People-Pleasing', 'Boundary Work'],
     icon: 'zap',
-    image: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80',
   },
   {
     pillar: '04',
@@ -56,7 +56,7 @@ export const SPECIALTIES = [
       'Navigating major career pivots, marriage or divorce, parenthood, existential grief, and redefining personal purpose. We build self-trust and emotional resilience to guide you through threshold seasons.',
     tags: ['Career Shifts', 'Grief & Loss', 'Values Alignment'],
     icon: 'calendar',
-    image: 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80',
   },
 ]
 
