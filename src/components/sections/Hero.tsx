@@ -44,8 +44,46 @@ export default function Hero() {
               Therapy for anxiety, trauma, and burnout — in-person at our quiet Santa Monica sanctuary & secure telehealth across California.
             </p>
 
+            {/* Mobile-only Dr. Reynolds Portrait (near top of page) */}
+            <div className="my-6 flex justify-center w-full md:hidden">
+              <div className="relative w-full max-w-[280px]">
+                {/* Organic Backdrop */}
+                <div className="absolute -inset-1.5 rounded-[2rem] bg-gradient-to-tr from-[var(--color-secondary-fixed)]/50 via-[var(--color-tertiary-fixed)]/30 to-[var(--color-surface-container-high)] -rotate-1" />
+                {/* Portrait Frame */}
+                <div className="relative overflow-hidden rounded-[1.75rem] bg-[var(--color-surface-container)] shadow-lg border border-[var(--color-outline-variant)]/40">
+                  <Image
+                    src="/images/dr-maya-reynolds.jpg"
+                    alt="Dr. Maya Reynolds, PsyD — Licensed Clinical Psychologist in Santa Monica, California"
+                    width={600}
+                    height={780}
+                    className="w-full h-[300px] object-cover object-top block"
+                    priority
+                  />
+                  {/* Gradient scrim */}
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[var(--color-inverse-surface)]/80 via-[var(--color-inverse-surface)]/40 to-transparent" />
+                  {/* Credibility Chip */}
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 rounded-xl bg-[var(--color-surface)]/95 backdrop-blur-md p-2.5 shadow-md flex items-center justify-between">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-secondary-container)] text-[var(--color-secondary)] shrink-0">
+                        <ShieldCheck size={16} strokeWidth={1.8} />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-[var(--color-primary)] leading-snug truncate" style={{ fontFamily: 'var(--font-jakarta)', fontSize: '13px', fontWeight: 600 }}>
+                          Dr. Maya Reynolds, PsyD
+                        </p>
+                        <p className="text-[var(--color-on-surface-variant)] tracking-wider uppercase truncate" style={{ fontSize: '9px', lineHeight: '13px', letterSpacing: '0.04em', fontWeight: 600 }}>
+                          {CONTACT_INFO.license}
+                        </p>
+                      </div>
+                    </div>
+                    <ShieldCheck size={16} className="text-[var(--color-secondary)] shrink-0 ml-1.5" strokeWidth={1.8} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Trust Pills */}
-            <div className="mt-7 flex flex-wrap items-center gap-2 sm:gap-2.5">
+            <div className="mt-2 sm:mt-7 flex flex-wrap items-center gap-2 sm:gap-2.5">
               {trustPills.map(({ icon: Icon, label }) => (
                 <span
                   key={label}
@@ -79,8 +117,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Portrait Card */}
-          <div className="relative flex justify-center lg:col-span-5 lg:justify-end mt-4 lg:mt-0">
+          {/* Right Column: Portrait Card (Desktop & Tablet only) */}
+          <div className="relative hidden md:flex justify-center lg:col-span-5 lg:justify-end mt-4 lg:mt-0">
             <div className="relative w-full max-w-md">
               {/* Organic Backdrop */}
               <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-tr from-[var(--color-secondary-fixed)]/50 via-[var(--color-tertiary-fixed)]/30 to-[var(--color-surface-container-high)] -rotate-1" />

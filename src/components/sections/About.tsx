@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { GraduationCap, Activity, Clock, Users } from 'lucide-react'
+import { GraduationCap, Activity, Clock, Users, ChevronDown, ChevronUp } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -39,6 +40,17 @@ const credentials = [
 ]
 
 export default function About() {
+  const [isBioExpanded, setIsBioExpanded] = useState(false)
+
+  const bioParagraphs = [
+    "I'm a licensed clinical psychologist based in Santa Monica, California, offering therapy for adults who feel overwhelmed by anxiety, stress, or the lingering effects of past experiences. Many of the people I work with are high-achieving, thoughtful, and self-aware — but internally feel exhausted, stuck in overthinking, or emotionally on edge.",
+    "My work often focuses on anxiety, panic, trauma, and burnout. Clients frequently come to me feeling 'functional' on the outside while quietly struggling with constant worry, tension in their body, difficulty sleeping, or a sense that they're always bracing for something to go wrong.",
+    "I take a warm, collaborative, and grounded approach to therapy. Sessions are structured enough to feel supportive, while still leaving space for reflection and depth. I integrate evidence-based methods such as cognitive-behavioral therapy (CBT), EMDR, mindfulness-based practices, and body-oriented techniques.",
+    "Trauma work is an important part of my practice. I work with adults who have experienced single-incident trauma as well as more complex, long-standing patterns that may stem from childhood, relationships, or chronic stress. My approach is paced carefully, with an emphasis on safety, stabilization, and helping clients feel more regulated.",
+    "In addition to trauma and anxiety, I frequently support clients dealing with professional burnout, perfectionism, and high internal pressure. Many are entrepreneurs, creatives, or professionals who feel disconnected from themselves after years of pushing through stress.",
+    "I offer both in-person therapy from my Santa Monica office and secure telehealth sessions for clients located in California. My office is a quiet, private space designed to feel calm and grounding, with natural light and a comfortable, uncluttered environment.",
+  ]
+
   return (
     <section id="about" className="relative w-full bg-[var(--color-surface-container-low)] py-16 sm:py-20 lg:py-28 scroll-mt-20">
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
@@ -81,18 +93,36 @@ export default function About() {
               &ldquo;I believe therapy works best when clients feel respected, understood, and actively involved in the process. My goal is not just symptom relief, but helping clients develop insight, resilience, and a stronger relationship with themselves over time.&rdquo;
             </motion.blockquote>
 
-            {[
-              "I'm a licensed clinical psychologist based in Santa Monica, California, offering therapy for adults who feel overwhelmed by anxiety, stress, or the lingering effects of past experiences. Many of the people I work with are high-achieving, thoughtful, and self-aware — but internally feel exhausted, stuck in overthinking, or emotionally on edge.",
-              "My work often focuses on anxiety, panic, trauma, and burnout. Clients frequently come to me feeling 'functional' on the outside while quietly struggling with constant worry, tension in their body, difficulty sleeping, or a sense that they're always bracing for something to go wrong.",
-              "I take a warm, collaborative, and grounded approach to therapy. Sessions are structured enough to feel supportive, while still leaving space for reflection and depth. I integrate evidence-based methods such as cognitive-behavioral therapy (CBT), EMDR, mindfulness-based practices, and body-oriented techniques.",
-              "Trauma work is an important part of my practice. I work with adults who have experienced single-incident trauma as well as more complex, long-standing patterns that may stem from childhood, relationships, or chronic stress. My approach is paced carefully, with an emphasis on safety, stabilization, and helping clients feel more regulated.",
-              "In addition to trauma and anxiety, I frequently support clients dealing with professional burnout, perfectionism, and high internal pressure. Many are entrepreneurs, creatives, or professionals who feel disconnected from themselves after years of pushing through stress.",
-              "I offer both in-person therapy from my Santa Monica office and secure telehealth sessions for clients located in California. My office is a quiet, private space designed to feel calm and grounding, with natural light and a comfortable, uncluttered environment.",
-            ].map((para, i) => (
-              <motion.p key={i} variants={fadeUp} custom={i + 1} style={{ fontSize: '16px', lineHeight: '26px' }}>
+            {bioParagraphs.map((para, i) => (
+              <motion.p
+                key={i}
+                id={i === 1 ? 'about-dr-reynolds-bio-extended' : undefined}
+                variants={fadeUp}
+                custom={i + 1}
+                className={i > 0 && !isBioExpanded ? 'hidden md:block' : 'block'}
+                style={{ fontSize: '16px', lineHeight: '26px' }}
+              >
                 {para}
               </motion.p>
             ))}
+
+            {/* Mobile Read Full Bio / Show Less Button */}
+            <div className="pt-1 md:hidden">
+              <button
+                type="button"
+                onClick={() => setIsBioExpanded((prev) => !prev)}
+                aria-expanded={isBioExpanded}
+                aria-controls="about-dr-reynolds-bio-extended"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/20 bg-[var(--color-surface)] px-4 py-2 text-sm font-semibold text-[var(--color-primary)] shadow-sm transition-all duration-200 hover:bg-[var(--color-surface-container-high)] hover:border-[var(--color-primary)]/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] active:scale-[0.98]"
+              >
+                <span>{isBioExpanded ? 'Show Less' : 'Read Full Bio'}</span>
+                {isBioExpanded ? (
+                  <ChevronUp size={16} strokeWidth={2.2} className="text-[var(--color-secondary)]" />
+                ) : (
+                  <ChevronDown size={16} strokeWidth={2.2} className="text-[var(--color-secondary)]" />
+                )}
+              </button>
+            </div>
           </motion.div>
 
           {/* Bento Credential Grid */}
