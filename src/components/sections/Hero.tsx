@@ -44,46 +44,8 @@ export default function Hero() {
               Therapy for anxiety, trauma, and burnout — in-person at our quiet Santa Monica sanctuary & secure telehealth across California.
             </p>
 
-            {/* Mobile-only Dr. Reynolds Portrait (near top of page) */}
-            <div className="my-6 flex justify-center w-full md:hidden">
-              <div className="relative w-full max-w-[280px]">
-                {/* Organic Backdrop */}
-                <div className="absolute -inset-1.5 rounded-[2rem] bg-gradient-to-tr from-[var(--color-secondary-fixed)]/50 via-[var(--color-tertiary-fixed)]/30 to-[var(--color-surface-container-high)] -rotate-1" />
-                {/* Portrait Frame */}
-                <div className="relative overflow-hidden rounded-[1.75rem] bg-[var(--color-surface-container)] shadow-lg border border-[var(--color-outline-variant)]/40">
-                  <Image
-                    src="/images/dr-maya-reynolds.jpg"
-                    alt="Dr. Maya Reynolds, PsyD — Licensed Clinical Psychologist in Santa Monica, California"
-                    width={600}
-                    height={780}
-                    className="w-full h-[300px] object-cover object-top block"
-                    priority
-                  />
-                  {/* Gradient scrim */}
-                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[var(--color-inverse-surface)]/80 via-[var(--color-inverse-surface)]/40 to-transparent" />
-                  {/* Credibility Chip */}
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 rounded-xl bg-[var(--color-surface)]/95 backdrop-blur-md p-2.5 shadow-md flex items-center justify-between">
-                    <div className="flex items-center gap-2 min-w-0">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-secondary-container)] text-[var(--color-secondary)] shrink-0">
-                        <ShieldCheck size={16} strokeWidth={1.8} />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-[var(--color-primary)] leading-snug truncate" style={{ fontFamily: 'var(--font-jakarta)', fontSize: '13px', fontWeight: 600 }}>
-                          Dr. Maya Reynolds, PsyD
-                        </p>
-                        <p className="text-[var(--color-on-surface-variant)] tracking-wider uppercase truncate" style={{ fontSize: '9px', lineHeight: '13px', letterSpacing: '0.04em', fontWeight: 600 }}>
-                          {CONTACT_INFO.license}
-                        </p>
-                      </div>
-                    </div>
-                    <ShieldCheck size={16} className="text-[var(--color-secondary)] shrink-0 ml-1.5" strokeWidth={1.8} />
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Trust Pills */}
-            <div className="mt-2 sm:mt-7 flex flex-wrap items-center gap-2 sm:gap-2.5">
+            <div className="mt-7 flex flex-wrap items-center gap-2 sm:gap-2.5">
               {trustPills.map(({ icon: Icon, label }) => (
                 <span
                   key={label}
@@ -114,6 +76,46 @@ export default function Hero() {
                 <span>Explore My Approach</span>
                 <ArrowDown size={17} strokeWidth={2} className="transition-transform duration-300 group-hover:translate-y-0.5" />
               </a>
+            </div>
+
+            {/* Mobile-only: Side-by-Side Row (Name & License on Left, Photo Headshot on Right) */}
+            <div className="mt-8 w-full md:hidden">
+              <div className="relative overflow-hidden rounded-2xl bg-[var(--color-surface-container)]/90 p-3.5 sm:p-4 shadow-sm border border-[var(--color-outline-variant)]/40 flex items-center justify-between gap-3.5">
+                {/* Left: Name and License */}
+                <div className="flex flex-col justify-center min-w-0 pr-1">
+                  <div className="inline-flex items-center gap-1.5 text-[var(--color-secondary)] mb-1">
+                    <ShieldCheck size={14} strokeWidth={2} className="shrink-0" />
+                    <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider">
+                      Licensed Psychologist
+                    </span>
+                  </div>
+                  <h3
+                    className="text-[var(--color-primary)] font-semibold text-[16px] sm:text-[17px] leading-snug truncate"
+                    style={{ fontFamily: 'var(--font-jakarta)' }}
+                  >
+                    Dr. Maya Reynolds, PsyD
+                  </h3>
+                  <p
+                    className="mt-0.5 text-[var(--color-on-surface-variant)] text-[12px] font-medium tracking-wide"
+                  >
+                    {CONTACT_INFO.license}
+                  </p>
+                </div>
+
+                {/* Right: Compact rounded-square headshot */}
+                <div className="relative shrink-0">
+                  <div className="relative h-20 w-20 overflow-hidden rounded-2xl border-2 border-[var(--color-surface)] shadow-md bg-[var(--color-surface-container-high)]">
+                    <Image
+                      src="/images/dr-maya-reynolds.jpg"
+                      alt="Dr. Maya Reynolds, PsyD — Licensed Clinical Psychologist in Santa Monica, California"
+                      width={160}
+                      height={160}
+                      className="h-full w-full object-cover object-top block"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
